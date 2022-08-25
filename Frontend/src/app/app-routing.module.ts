@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { PartidoComponent } from './components/partidas/partidos.component';
+import { CreatepartidoComponent } from './components/createpartido/createpartido.component';
 // Components
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path:'partidos',
     component: PartidoComponent
+  },
+  {
+    path: 'createPartido',
+    component: CreatepartidoComponent
   }
 ];
 

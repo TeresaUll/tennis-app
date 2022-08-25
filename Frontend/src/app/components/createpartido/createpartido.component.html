@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                Añadir partida
+            </div>
+            <div class="card-body">
+                <form (submit)="add()">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="partido.dia" name="dia" class="form-control" placeholder="Dia" required >
+                    </div>
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="partido.mes" name="mes" class="form-control" placeholder="Mes" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="partido.ano" name="ano" class="form-control" placeholder="Ano" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="partido.hora" name="hora" class="form-control" placeholder="Hora" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="partido.lugar" name="lugar" class="form-control" placeholder="Lugar" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="partido.dificultad" name="dificultad" class="form-control" placeholder="Dificultad" required>
+                    </div>
+                    <button class="btn btn-primary btn-block">
+                        Añadir
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
