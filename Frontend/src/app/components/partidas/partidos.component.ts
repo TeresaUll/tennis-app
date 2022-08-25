@@ -18,11 +18,12 @@ export class PartidoComponent implements OnInit{
 				let partidas = Object.values(res);
 				let partida = '';
 
-				partidas.forEach((partida, index) => {
-					partida = partida + '<div class="card" tabindex="' + index + '">';
+				partidas.forEach((partida, id) => {
+					partida = partida + '<div class="card" tabindex="' + id + '">';
+					partida = partida.dia + partida.mes + partida.ano;
 				  })
 				  this.partidasunidas = partida;
-				  
+				  console.log('funciona');
 			},
 			err => console.log('algo falla mostrando las partidas')
 
