@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AddpartidaService } from '../../services/addpartida.service';
-
+//import { AddpartidaService } from '../../services/addpartida.service';
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-createpartido',
   templateUrl: './createpartido.component.html',
@@ -18,25 +18,22 @@ export class CreatepartidoComponent implements OnInit {
   }
   constructor(
     private router: Router, 
-    public addPartidaService: AddpartidaService
+    //public addPartidaService: AddpartidaService
+    private authService: AuthService
     ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    console.log("Página cargada");
   }
   add() {
-    this.addPartidaService.addPartido(this.partido)
-    .subscribe(
+    this.authService.addPartido(this.partido).subscribe(
       res => {
-         console.log(res)
-         localStorage.setItem('dia', res.dia);
-         localStorage.setItem('mes', res.mes);
-         localStorage.setItem('ano', res.ano);
-         localStorage.setItem('hora', res.hora);
-         localStorage.setItem('hora', res.lugar);
-         localStorage.setItem('dificultad', res.dificultad);
-         this.router.navigate(['/createpartido'])
+        alert("Partida Creada");
+        console.log(res)
+        this.router.navigate(['/createpartido']);
       },
-      err => console.log(err)
+      err => console.log("error")
+      
       )
   }
 

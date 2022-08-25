@@ -30,5 +30,8 @@ export class AuthService {
   getToken() {
     return localStorage.getItem('token');
   }
+  addPartido(partido: any){
+    return this.http.post(this.URL + '/createpartido', partido);
+  }
 
 }

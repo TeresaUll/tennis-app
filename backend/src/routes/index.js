@@ -15,13 +15,20 @@ router.post('/signup', async (req, res) => {
 		const token = await jwt.sign({_id: newUser._id}, 'secretkey');
     res.status(200).json({token});
 });
+/*router.post('/createpartido', async (req, res) => {
+    const { dia, mes, ano, hora, lugar, dificultad } = req.body;
+    const newPartido = new Partido ({dia, mes, ano, hora, lugar, dificultad});
+    await newPartido.save();
+    return res.status(200).json(newPartido);
+});
+*/
 router.post('/createpartido', async (req, res) => {
     const { dia, mes, ano, hora, lugar, dificultad } = req.body;
     const newPartido = new Partido ({dia, mes, ano, hora, lugar, dificultad});
-    console.log(newPartido);
+  
     await newPartido.save();
-    return res.status(200).send('Partido añadido');
-});
+    return res.status(200).json(newPartido);
+  })
 
 router.post('/signin', async (req, res) => {
     const { email, password } = req.body;
