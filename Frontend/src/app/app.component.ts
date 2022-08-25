@@ -7,8 +7,7 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  title = ' Tenis La Laguna';
   constructor(public authService: AuthService) {}
-
-  title = 'frontend';
 }
+
