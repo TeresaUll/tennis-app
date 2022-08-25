@@ -12,13 +12,15 @@ import { PartidoComponent } from './components/partidas/partidos.component';
 
 //import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     SigninComponent,
-    PartidoComponent
+    PartidoComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
