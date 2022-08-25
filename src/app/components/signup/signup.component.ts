@@ -8,11 +8,14 @@ import { Router } from '@angular/router'
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  user = {
+    email: "",
+    password: ""
+  }
 
-  user = {}
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
     ) { }
 
   ngOnInit() {
@@ -20,13 +23,13 @@ export class SignupComponent implements OnInit {
 
   signUp() {
     this.authService.signUpUser(this.user)
-      .subscribe(
-        res => {
-          console.log(res);
+    .subscribe(
+      res => {
+        console.log(res)
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/private']);
-        },
-        err => console.log(err)
+          this.router.navigate(['/inicio'])
+      },
+      err => console.log(err)
       )
   }
 

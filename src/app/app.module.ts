@@ -7,7 +7,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
-import { AuthGuard } from './auth.guard';
+//import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     HttpClientModule
   ],
   providers: [
-    AuthGuard,
+   // AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
