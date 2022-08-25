@@ -41,29 +41,7 @@ router.post('/signin', async (req, res) => {
 
     return res.status(200).json({token});
 });
-/*
-router.get('/tasks', (req, res) => {
-    res.json([
-        {
-            _id: '1',
-            name: "task one",
-            description: 'asdadasd',
-            date: "2019-11-06T15:50:18.921Z"
-        },
-        {
-            _id: '2',
-            name: "task two",
-            description: 'asdadasd',
-            date: "2019-11-06T15:50:18.921Z"
-        },
-        {
-            _id: '3',
-            name: "task three",
-            description: 'asdadasd',
-            date: "2019-11-06T15:50:18.921Z"
-        },
-    ])
-});
+/*  
 
 router.get('/private-tasks', verifyToken, (req, res) => {
     res.json([
@@ -88,6 +66,11 @@ router.get('/private-tasks', verifyToken, (req, res) => {
     ])
 });
 */
+
+router.get('/partidas', async (req, res) =>{
+let partidas = await Partido.find()
+res.send(partidas);
+})
 
 async function verifyToken(req, res, next) {
 	try {

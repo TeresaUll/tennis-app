@@ -9,16 +9,15 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class CreatepartidoComponent implements OnInit {
   partido = {
-    dia: 0,
-    mes: 0,
-    ano: 0,
+    dia: "",
+    mes: "",
+    ano: "",
     hora: "",
     lugar: "",
     dificultad: ""
   }
   constructor(
     private router: Router, 
-    //public addPartidaService: AddpartidaService
     private authService: AuthService
     ) { }
 

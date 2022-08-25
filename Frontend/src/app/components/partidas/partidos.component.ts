@@ -1,24 +1,34 @@
-import {Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {Input , Output , EventEmitter } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
 	selector: 'partido',
 	templateUrl: './partidos.component.html',
 	styleUrls: ['./partidos.component.css']
 })
-export class PartidoComponent{
-	@Input() nombre?: string; //recibir el valor desde fuera
+export class PartidoComponent implements OnInit{
+	partidasunidas: string = '';
 
-	@Output() pasameDatos = new EventEmitter();
+	constructor(private authService: AuthService) { }
+	
+	ngOnInit(): void {
+		this.authService.partidas().subscribe(
+			res => {
+				let partidas = Object.values(res);
+				let partida = '';
 
-	constructor(){
-		this.nombre='part';
+				partidas.forEach((partida, index) => {
+					partida = partida + '<div class="card" tabindex="' + index + '">';
+				  })
+				  this.partidasunidas = partida;
+				  
+			},
+			err => console.log('algo falla mostrando las partidas')
+
+		)
+		
+
 	}
 
-	emitirEvento(){
-		this.pasameDatos.emit({
-			'nombre': this.nombre
-		})
-
-	}
 }

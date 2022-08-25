@@ -1,9 +1,9 @@
 const { Schema, model } = require('mongoose');
 
 const partidoSchema = new Schema({
-    dia: Number,
-    mes: Number,
-    ano: Number,
+    dia: String,
+    mes: String,
+    ano: String,
     hora: String,
     lugar: String,
     dificultad: String
