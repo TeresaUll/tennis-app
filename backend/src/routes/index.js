@@ -70,6 +70,10 @@ router.get('/private-tasks', verifyToken, (req, res) => {
 router.get('/partidas', async (req, res) =>{
 let partidas = await Partido.find()
 res.send(partidas);
+res.json(partidas);
+return res.status(401).send('funciona');
+
+
 })
 
 async function verifyToken(req, res, next) {

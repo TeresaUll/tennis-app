@@ -27,7 +27,7 @@ const routes: Routes = [
     component: SignupComponent
   },
   {
-    path:'partidos',
+    path:'partidas',
     component: PartidoComponent
   },
   {
