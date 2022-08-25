@@ -14,7 +14,10 @@ const routes: Routes = [
     redirectTo: '/inicio',
     pathMatch: 'full'
   },
-
+  {
+    path: 'inicio',
+    component: InicioComponent
+  },
   {
     path: 'signin',
     component: SigninComponent
