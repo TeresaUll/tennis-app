@@ -24,18 +24,17 @@ export class CreatepartidoComponent implements OnInit {
   ngOnInit(): void {
   }
   add() {
-    this.addPartidaService.addPartida(this.partido)
+    this.addPartidaService.addPartido(this.partido)
     .subscribe(
       res => {
-        console.log(res)
-        /* // localStorage.setItem('token', res.token);
+         console.log(res)
          localStorage.setItem('dia', res.dia);
          localStorage.setItem('mes', res.mes);
          localStorage.setItem('ano', res.ano);
          localStorage.setItem('hora', res.hora);
+         localStorage.setItem('hora', res.lugar);
          localStorage.setItem('dificultad', res.dificultad);
-         */
-         this.router.navigate(['/partidas'])
+         this.router.navigate(['/createpartido'])
       },
       err => console.log(err)
       )

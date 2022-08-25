@@ -1,8 +1,7 @@
 const { Router } = require('express');
 const router = Router();
-
 const User = require('../models/User');
-
+const Partido = require('../models/Partido');
 const jwt = require('jsonwebtoken');
 
 router.get('/', (req, res) => {
@@ -16,6 +15,13 @@ router.post('/signup', async (req, res) => {
 		const token = await jwt.sign({_id: newUser._id}, 'secretkey');
     res.status(200).json({token});
 });
+router.post('/createpartido', async (req, res) => {
+    const { dia, mes, ano, hora, lugar, dificultad } = req.body;
+    const newPartido = new Partido ({dia, mes, ano, hora, lugar, dificultad});
+    console.log(newPartido);
+    await newPartido.save();
+    return res.status(200).send('Partido añadido');
+});
 
 router.post('/signin', async (req, res) => {
     const { email, password } = req.body;
@@ -28,7 +34,7 @@ router.post('/signin', async (req, res) => {
 
     return res.status(200).json({token});
 });
-
+/*
 router.get('/tasks', (req, res) => {
     res.json([
         {
@@ -74,6 +80,7 @@ router.get('/private-tasks', verifyToken, (req, res) => {
         },
     ])
 });
+*/
 
 async function verifyToken(req, res, next) {
 	try {
@@ -96,5 +103,7 @@ async function verifyToken(req, res, next) {
 		return res.status(401).send('Unauhtorized Request');
 	}
 }
+
+
 
 module.exports = router;

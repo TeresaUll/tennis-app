@@ -8,14 +8,9 @@ import { Router } from '@angular/router';
 export class AddpartidaService {
 
   private URL = 'http://localhost:4000/api';
-  constructor(
-    private http: HttpClient, 
-    private router: Router
-    ) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  addPartida(partida: any) {
-    this.router.navigate(['/partidos']);
-    return this.http.post<any>(this.URL + '/partidos', partida);
-    
+  addPartido(partido: any) {
+    return this.http.post<any>(this.URL + '/createpartido', partido);
   }
 }
