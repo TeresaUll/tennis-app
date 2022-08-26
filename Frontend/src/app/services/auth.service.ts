@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private URL = 'http://localhost:4000/api';
+  public URL = 'http://localhost:4000/api';
   constructor(private http: HttpClient, private router: Router) { }
 
   signUpUser(user: any) {
     return this.http.post<any>(this.URL + '/signup', user);
   }
 
-  signInUser(user:any) {
+  signInUser(user: any) {
     return this.http.post<any>(this.URL + '/signin', user);
   }
 

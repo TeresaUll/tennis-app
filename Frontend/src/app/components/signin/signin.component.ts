@@ -18,8 +18,10 @@ export class SigninComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    console.log("Página cargada")
   }
+
 
   signIn() {
     this.authService.signInUser(this.user)
@@ -27,9 +29,10 @@ export class SigninComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/private']);
+          this.router.navigate(['/inicio']);
+          alert("Has entrado a tu perfil!")
         },
-        err => console.log(err)
+        err => console.log("El usuario o la contraseña son incorrectos")
       )
   }
 

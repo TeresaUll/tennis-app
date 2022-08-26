@@ -34,12 +34,12 @@ router.post('/signin', async (req, res) => {
     const { email, password } = req.body;
 
     const user = await User.findOne({email});
-    if (!user) return res.status(401).send('The email doen\' exists');
-    if (user.password !== password) return res.status(401).send('Wrong Password');
-
+    if (!user) return res.status(401).send('Este email no existe');
+    if (user.password !== password) return res.status(401).send('Contraseña incorrecta');
+    else{
 		const token = jwt.sign({_id: user._id}, 'secretkey');
-
-    return res.status(200).json({token});
+        return res.status(200).json({token})
+    }
 });
 /*  
 
