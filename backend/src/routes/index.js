@@ -76,7 +76,7 @@ async function verifyToken(req, res, next) {
 	}
 }
 router.get('/secreto', verifyToken, (req, res) => {
-    res("Solo puedes ver esto si te autentificas")
+    res("Solo puedes ver esto si te autentificas y este mensaje viene del Backend")
 })
 
 
