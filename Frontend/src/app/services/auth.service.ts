@@ -34,7 +34,10 @@ export class AuthService {
     return this.http.post(this.URL + '/createpartido', partido);
   }
   getPartidas() {
-    return this.http.get<any>(this.URL + '/partidas');
+    
+    var res = this.http.get<any>(this.URL + '/partidas');
+    return res;
+    
   }
   
 }
