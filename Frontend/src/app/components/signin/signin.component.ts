@@ -29,7 +29,7 @@ export class SigninComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/inicio']);
+          this.router.navigate(['/secreto']);
           alert("Has entrado a tu perfil!")
         },
         err => console.log("El usuario o la contraseña son incorrectos")

@@ -6,8 +6,8 @@ import { CreatepartidoComponent } from './components/createpartido/createpartido
 // Components
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
-//import { AuthGuard } from './auth.guard';
-
+import { AuthGuard } from './auth.guard';
+import { SecretoComponent } from './components/secreto/secreto.component';
 const routes: Routes = [
   {
     path: '',
@@ -33,6 +33,11 @@ const routes: Routes = [
   {
     path: 'createPartido',
     component: CreatepartidoComponent
+  },
+  {
+    path: 'secreto',
+    component: SecretoComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

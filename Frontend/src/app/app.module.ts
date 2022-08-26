@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { PartidoComponent } from './components/partidas/partidos.component';
-//import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { SecretoService } from './services/secreto.service';
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -34,7 +34,7 @@ import { SecretoComponent } from './components/secreto/secreto.component';
     
   ],
   providers: [
-   // AuthGuard,
+   AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
