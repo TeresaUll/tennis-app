@@ -37,16 +37,6 @@ router.post('/signin', async (req, res) => {
 });
 
 
-router.get('/uiu', (req, res) => {
-    res.json([
-        {
-            _id: '1',
-            name: "task one",
-            description: 'asdadasd',
-            date: "2019-11-06T15:50:18.921Z"
-        }
-    ])
-});
 
 router.get('/partidas', async (req, res) => {
     let partidas = await Partido.find()
@@ -71,12 +61,12 @@ async function verifyToken(req, res, next) {
 		req.userId = payload._id;
 		next();
 	} catch(e) {
-		//console.log(e)
+		console.log(e)
 		return res.status(401).send('Unauhtorized Request');
 	}
 }
 router.get('/secreto', verifyToken, (req, res) => {
-    res("Solo puedes ver esto si te autentificas y este mensaje viene del Backend")
+    res.send('Mensaje desde el backend')
 })
 
 
