@@ -33,8 +33,8 @@ export class AuthService {
   addPartido(partido: any){
     return this.http.post(this.URL + '/createpartido', partido);
   }
-  partidas() {
-    return this.http.get(this.URL + '/partidas');
+  getPartidas() {
+    return this.http.get<any>(this.URL + '/partidas');
   }
-
+  
 }
