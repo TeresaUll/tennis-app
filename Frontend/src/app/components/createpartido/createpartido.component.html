@@ -1,10 +1,10 @@
 <div class="row">
     <div class="col-md-4 mx-auto">
         <div class="card">
-            <div class="card-header" style="background-color: #ffee9c">
+            <div class="card-header" style="background-color: #b4cbf4">
                 Añadir partida
             </div>
-            <div class="card-body" style="background-color:#fffec6">
+            <div class="card-body" style="background-color:#c8d8f4">
                 <form (submit)="add()">
                     <div class="form-group">
                         <input type="text" [(ngModel)]="partido.dia" name="dia" class="form-control" placeholder="Dia" required >
@@ -25,7 +25,7 @@
                         <input type="text" [(ngModel)]="partido.dificultad" name="dificultad" class="form-control" placeholder="Dificultad" required>
                     </div>
                     <p></p>
-                    <button class="btn btn-warning">
+                    <button class="btn btn-light">
                         Añadir
                     </button>
                 </form>
