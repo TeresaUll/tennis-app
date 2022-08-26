@@ -1,12 +1,12 @@
-<div class="col-lg-8 col-lg-offset-2">
+<div class="col-lg-8 mx-auto"> <!-- //mx-auto para centrarlo -->
     <div class="jumbotron">
       <h1>{{title}}</h1>
+      <h3>{{lugar}}</h3>
       <p>Distruta con nosotros de partidos todos los días en toda la zona de la Laguna </p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button" [routerLink] = "['/partidos']">Ver partidos</a></p>
+      <!-- <image src="./assets/img/fotoInicio1.jpg" > </image> -->
+          <p><a class="btn btn-primary btn-lg" href="#" role="button" [routerLink] = "['/createPartido']">Crear partidos</a>
+          <a class="btn btn-success btn-lg" href="#" role="button" [routerLink] = "['/partidas']">Ver partidos</a></p>
+          <p><a class="btn btn-warning btn-lg" href="#" role="button" [routerLink] = "['/signin']">SignIn</a>
+          <a class="btn btn-danger btn-lg" href="#" role="button" [routerLink] = "['/signup']">SignUp</a></p>
     </div>
-</div>
-
-<div class="col-lg-8 col-lg-offset-2">
-<span class="label label-info" [routerLink] = "['/signin']">SignIn</span>
-<span class="label label-warning" [routerLink] = "['/signup']">SignUp</span>
 </div>
