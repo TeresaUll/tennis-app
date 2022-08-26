@@ -15,13 +15,7 @@ router.post('/signup', async (req, res) => {
 		const token = await jwt.sign({_id: newUser._id}, 'secretkey');
     res.status(200).json({token});
 });
-/*router.post('/createpartido', async (req, res) => {
-    const { dia, mes, ano, hora, lugar, dificultad } = req.body;
-    const newPartido = new Partido ({dia, mes, ano, hora, lugar, dificultad});
-    await newPartido.save();
-    return res.status(200).json(newPartido);
-});
-*/
+
 router.post('/createpartido', async (req, res) => {
     const { dia, mes, ano, hora, lugar, dificultad } = req.body;
     const newPartido = new Partido ({dia, mes, ano, hora, lugar, dificultad});
@@ -41,37 +35,23 @@ router.post('/signin', async (req, res) => {
         return res.status(200).json({token})
     }
 });
-/*  
 
-router.get('/private-tasks', verifyToken, (req, res) => {
+
+router.get('/uiu', (req, res) => {
     res.json([
         {
             _id: '1',
             name: "task one",
             description: 'asdadasd',
             date: "2019-11-06T15:50:18.921Z"
-        },
-        {
-            _id: '2',
-            name: "task two",
-            description: 'asdadasd',
-            date: "2019-11-06T15:50:18.921Z"
-        },
-        {
-            _id: '3',
-            name: "task three",
-            description: 'asdadasd',
-            date: "2019-11-06T15:50:18.921Z"
-        },
+        }
     ])
 });
-*/
 
-router.get('/partidas', async (req, res) =>{
-let partidas = await Partido.find()
-res.send(partidas);
-
-})
+router.get('/partidas', verifyToken, async (req, res) => {
+    let partidas = await Partido.find()
+    res.send(partidas);
+  });
 
 async function verifyToken(req, res, next) {
 	try {

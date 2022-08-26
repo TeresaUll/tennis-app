@@ -29,7 +29,7 @@ export class CreatepartidoComponent implements OnInit {
       res => {
         alert("Partida Creada");
         console.log(res)
-        this.router.navigate(['/createpartido']);
+        this.router.navigate(['/createPartido']);
       },
       err => console.log("error")
       
