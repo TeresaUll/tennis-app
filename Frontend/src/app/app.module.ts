@@ -11,8 +11,10 @@ import { SigninComponent } from './components/signin/signin.component';
 import { PartidoComponent } from './components/partidas/partidos.component';
 //import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { SecretoService } from './services/secreto.service';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { CreatepartidoComponent } from './components/createpartido/createpartido.component';
+import { SecretoComponent } from './components/secreto/secreto.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { CreatepartidoComponent } from './components/createpartido/createpartido
     SigninComponent,
     PartidoComponent,
     InicioComponent,
-    CreatepartidoComponent
+    CreatepartidoComponent,
+    SecretoComponent
   ],
   imports: [
     BrowserModule,

@@ -54,7 +54,7 @@ router.get('/partidas', async (req, res) => {
   });
 
 
-/*async function verifyToken(req, res, next) {
+async function verifyToken(req, res, next) {
 	try {
 		if (!req.headers.authorization) {
 			return res.status(401).send('Unauhtorized Request');
@@ -74,8 +74,10 @@ router.get('/partidas', async (req, res) => {
 		//console.log(e)
 		return res.status(401).send('Unauhtorized Request');
 	}
-}*/
-
+}
+router.get('/secreto', verifyToken, (req, res) => {
+    res("Solo puedes ver esto si te autentificas")
+})
 
 
 module.exports = router;
