@@ -4,7 +4,7 @@ const cors = require('cors');
 require('./database');
 
 app.listen(3000);
-//console.log('server on port', 3000);
+console.log('server on port', 3000);
 
 
 // settings

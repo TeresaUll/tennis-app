@@ -48,12 +48,13 @@ router.get('/uiu', (req, res) => {
     ])
 });
 
-router.get('/partidas', verifyToken, async (req, res) => {
+router.get('/partidas', async (req, res) => {
     let partidas = await Partido.find()
     res.send(partidas);
   });
 
-async function verifyToken(req, res, next) {
+
+/*async function verifyToken(req, res, next) {
 	try {
 		if (!req.headers.authorization) {
 			return res.status(401).send('Unauhtorized Request');
@@ -73,7 +74,7 @@ async function verifyToken(req, res, next) {
 		//console.log(e)
 		return res.status(401).send('Unauhtorized Request');
 	}
-}
+}*/
 
 
 
