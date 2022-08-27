@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./secreto.component.css']
 })
 export class SecretoComponent implements OnInit {
+  principal ='Somos una organización que llevamos 6 años disfrutando contigo!';
+  conta ='Si necesitas contactar con nosotros:';
+
   message = '';
   constructor(private secretoService: SecretoService, private router: Router) { }
 

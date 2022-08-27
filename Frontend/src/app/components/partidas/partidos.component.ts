@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 
 })
 export class PartidoComponent implements OnInit{
+	info = 'Las partidas que están ahora mismo disponibles son las siguientes: ';
 	partidas = [];
 	constructor(private authService: AuthService) { }
   
