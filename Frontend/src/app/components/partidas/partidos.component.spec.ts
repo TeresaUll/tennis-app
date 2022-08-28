@@ -1,6 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';imports: [RouterTestingModule, HttpClientModule]
 import { PartidoComponent } from './partidos.component';
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PartidosComponent', () => {
   let component: PartidoComponent;
@@ -8,7 +9,8 @@ describe('PartidosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PartidoComponent ]
+      declarations: [ PartidoComponent ],
+      imports: [RouterTestingModule, HttpClientModule]
     })
     .compileComponents();
 
@@ -17,7 +19,7 @@ describe('PartidosComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Se crea el componente partidos', () => {
     expect(component).toBeTruthy();
   });
 });

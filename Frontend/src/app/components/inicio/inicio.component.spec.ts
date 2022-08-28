@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 import { InicioComponent } from './inicio.component';
 
 describe('InicioComponent', () => {
@@ -8,7 +9,8 @@ describe('InicioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InicioComponent ]
+      declarations: [ InicioComponent ],
+      imports: [RouterTestingModule, HttpClientModule]
     })
     .compileComponents();
 
@@ -17,7 +19,7 @@ describe('InicioComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Se crea el componente inicio', () => {
     expect(component).toBeTruthy();
   });
 });

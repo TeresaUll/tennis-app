@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';     imports: [RouterTestingModule, HttpClientModule]
 import { CreatepartidoComponent } from './createpartido.component';
 
 describe('CreatepartidoComponent', () => {
@@ -8,7 +9,8 @@ describe('CreatepartidoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreatepartidoComponent ]
+      declarations: [ CreatepartidoComponent ],
+      imports: [RouterTestingModule, HttpClientModule]
     })
     .compileComponents();
 
@@ -17,7 +19,7 @@ describe('CreatepartidoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Se crea el componente Createpartido', () => {
     expect(component).toBeTruthy();
   });
 });

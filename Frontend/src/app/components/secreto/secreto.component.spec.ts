@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 import { SecretoComponent } from './secreto.component';
 
 describe('SecretoComponent', () => {
@@ -8,7 +9,8 @@ describe('SecretoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SecretoComponent ]
+      declarations: [ SecretoComponent ],
+      imports: [RouterTestingModule, HttpClientModule]
     })
     .compileComponents();
 
@@ -17,7 +19,7 @@ describe('SecretoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Se crea el componente Secreto', () => {
     expect(component).toBeTruthy();
   });
 });
