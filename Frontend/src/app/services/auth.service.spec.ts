@@ -21,4 +21,16 @@ describe('AuthService', () => {
     service.signUpUser({email: "test@gmail.com", password: "test"});
     expect(signUpF).toHaveBeenCalled();
   });
+  it('Comprobación función signIn()', () => {
+    let signInF = spyOn(service, 'signInUser')
+    service.signInUser({email: "test@gmail.com", password: "test"});
+    expect(signInF).toHaveBeenCalled();
+  });
+  it('Comprobación función loggedIn()', () => {
+    expect(service.loggedIn()).toBeTruthy();    
+  });
+
+  it('Comprobación función getToken()', () => {
+    expect(service.getToken()).toEqual('test');
+  });
 });

@@ -20,5 +20,9 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
+  it('Comprobar que en el HTML hay router-outlet para añadir los componentes', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    expect(fixture.nativeElement.querySelector('router-outlet')).not.toBeNull();
+  });
 
 });
