@@ -1,30 +1,21 @@
 language: node_js
 node_js:
- - "16.13.0"
+  - "16.13.0"
+dist: trusty
+sudo: false
 
-branches:
-  only:
-    - master
+cache:
+  directories:
+    - Frontend/node_modules
 
 addons:
   chrome: stable
 
-before_script:
-  - yarn global add @angular/cli
-
-cache:
-  yarn: true
-  directories:
-    - node_modules
+before-script:
+  - cd Frontend
+  - npm install
 
 script:
-  - ng build --prod
-
-
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  keep-history: true
-  local-dir: ./dist/
-  on:
+  - npm run lint
+  - npm run test-headless
+  - npm run build
