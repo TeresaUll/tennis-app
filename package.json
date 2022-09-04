@@ -1,0 +1,35 @@
+{
+  "name": "tennis-app",
+  "version": "1.0.0",
+  "main": "backend/src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon backend/src/index.js --ignore frontend",
+    "build": "npm run build --prefix frontend",
+    "start": "node backend/src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeresaUll/tennis-app.git"
+  },
+  "author": "Teresa <tbonetcosta@gmail.com> (https://github.com/TeresaUll)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeresaUll/tennis-app/issues"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.2",
+    "@angular/cli": "14.2.1",
+    "@angular/compiler-cli": "14.2.0",
+    "typescript": "4.8.2"
+  },
+  "engines": {
+    "node": "v18.7.0",
+    "npm":"8.15.0"
+  },
+  "homepage": "https://github.com/TeresaUll/tennis-app#readme",
+  "description": ""
+}
