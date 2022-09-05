@@ -8,7 +8,7 @@
     "dev": "nodemon backend/src/index.js --ignore frontend",
     "build": "cd frontend && npm install && ng build",
     "watch": "ng build --watch --configuration development",
-    "start": "cd frontend && ng serve"
+    "start": "cd Frontend && ng serve"
   },
   "repository": {
     "type": "git",
