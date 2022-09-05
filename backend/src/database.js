@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/angular-auth', {
+//const url = 'mongodb://localhost/angular-auth';
+const url = 'mongodb+srv://tbonetcosta:teresamarta@cluster0.scnjfdg.mongodb.net/?retryWrites=true&w=majority';
+mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
